@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="equation"
+            type="com.aarav.quadraticequationapp2.MyEquation" />
+    </data>
+
+
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@={equation.a}"
+                android:id="@+id/cox2"
+                android:textColor="@color/white"
+                android:hint="Enter co-efficient of x^2"
+                android:textColorHint="@color/white"
+                android:textSize="18sp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/cox"
+                android:textColor="@color/white"
+                android:text="@={equation.b}"
+                android:hint="Enter co-efficient of x"
+                android:textColorHint="@color/white"
+                android:textSize="18sp"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/coconst"
+                android:textColor="@color/white"
+                android:text="@={equation.c}"
+                android:hint="Enter constant"
+                android:textColorHint="@color/white"
+                android:textSize="18sp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solve"
+                android:onClick="@{equation::solveEquation}"
+                android:id="@+id/solve"
+                android:layout_marginTop="30dp"
+                android:textSize="26sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:text="Solution"
+                android:id="@+id/solution"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
